@@ -6,14 +6,14 @@ terraform {
   }
 
    backend "gcs" {
-    bucket  = "barberoterraform"
+    bucket  = "terraformcloudbuild-demoner"
     prefix  = "terraform/state"
   }
   
 }
 
 provider "google" {
-  project = "barbero-devops-iac"
+  project = "giran-367703"
   region  = "us-central1"
   zone    = "us-central1-c"
 }
@@ -23,7 +23,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance"
+  name  = "cloudbbuildterraform"
   machine_type = "f1-micro"
   tags = ["prod"]
 
